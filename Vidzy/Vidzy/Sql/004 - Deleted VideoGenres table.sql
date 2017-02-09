@@ -1,0 +1,1 @@
+﻿DROP Table dbo.VideoGenres
