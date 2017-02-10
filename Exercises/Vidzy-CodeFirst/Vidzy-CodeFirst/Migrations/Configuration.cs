@@ -1,19 +1,18 @@
-namespace CodeFirstExistingDatabase.Migrations
+namespace Vidzy_CodeFirst.Migrations
 {
     using System;
-    using System.Collections.ObjectModel;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CodeFirstExistingDatabase.PlutoContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Vidzy_CodeFirst.Model.VidzyDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CodeFirstExistingDatabase.PlutoContext context)
+        protected override void Seed(Vidzy_CodeFirst.Model.VidzyDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -27,17 +26,6 @@ namespace CodeFirstExistingDatabase.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            // Populate Authors and their courses
-            context.Authors.AddOrUpdate(a => a.Name,
-                new Author
-                {
-                    Name = "Author 1",
-                    Courses = new Collection<Course>()
-                    {
-                        new Course {Name = "Course for Author1", Description = "Description" }
-                    }
-                });
         }
     }
 }
